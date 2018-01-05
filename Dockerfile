@@ -8,7 +8,8 @@ RUN echo http://dl-2.alpinelinux.org/alpine/edge/community/ >> /etc/apk/reposito
  && apk --no-cache add shadow \
  && userdel guest \
  && groupdel users \
- && groupmod -g 100 docker \
+ && groupdel ping \
+ && groupmod -g 999 docker \
  && usermod -aG docker jenkins
 
 # Switch back to jenkins user.
